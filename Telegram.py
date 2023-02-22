@@ -13,5 +13,6 @@ def start_message(msg):
 @bot.message_handler(commands=['test'])
 def test_message(msg):
     bot.send_message(chat_id, 'This is a test for updates')
+    bot.send_message(chat_id, 'Test again lel forgot first commit')
 
 bot.polling()
