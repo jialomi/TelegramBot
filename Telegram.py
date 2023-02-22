@@ -8,7 +8,7 @@ bot = telebot.TeleBot("1793841737:AAFFzzD2LkBuW1kg0aNq7dKLYNHuAy1BHP4")
 #chat_id = "301795147"
 
 # Set up the OpenAI API
-openai.api_key = "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"
+openai.api_key = "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"
 # Define a function to handle incoming messages
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
