@@ -9,7 +9,7 @@ chat_id = "301795147"
 
 @bot.message_handler(commands=['start'])
 def start_message(msg):
-    bot.send_media_group(chat_id, 'Hello this is a test for the telegrambot running on my raspberry pi')
+    bot.send_message(chat_id, 'Hello this is a test for the telegrambot running on my raspberry pi')
 
 # Start the bot
 bot.polling()
