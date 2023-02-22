@@ -9,5 +9,9 @@ chat_id = "301795147"
 @bot.message_handler(commands=['start'])
 def start_message(msg):
     bot.send_message(chat_id, 'Test bot for heroku started up')
+    
+@bot.message_handler(commands=['test'])
+def test_message(msg):
+    bot.send_message(chat_id, 'This is a test for updates')
 
 bot.polling()
