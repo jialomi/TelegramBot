@@ -1,7 +1,7 @@
 import telebot
 import re
 
-tomeRange = 1 , 2 , 3 , 4 , 5 , 6
+tomeRange = [1 , 2 , 3 , 4 , 5 , 6]
 
 # Replace with your own Telegram bot token
 bot = telebot.TeleBot("1793841737:AAFFzzD2LkBuW1kg0aNq7dKLYNHuAy1BHP4")
