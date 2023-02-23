@@ -1,7 +1,7 @@
 import telebot
 import re
 
-tomeRange = [1 , 2 , 3 , 4 , 5 , 6]
+tomeRange = ['1' , '2' , '3' , '4' , '5' , '6']
 
 # Replace with your own Telegram bot token
 bot = telebot.TeleBot("1793841737:AAFFzzD2LkBuW1kg0aNq7dKLYNHuAy1BHP4")
@@ -25,7 +25,7 @@ def start_Tome(message):
         bot.register_next_step_handler(msg, whichTome)
         
 def whichTome(message):
-    if int(message.text) in tomeRange:
+    if message.text in tomeRange:
         value = int(message.text)
         bot.send_message(chat_id, f'You have entered {value}')
     else:
