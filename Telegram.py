@@ -28,9 +28,11 @@ def whichTome(message):
     if message.text in tomeRange:
         value = int(message.text)
         bot.send_message(chat_id, f'You have entered {value}')
+    elif message.text == 'cancel':
+        bot.send_message(chat_id, 'Command cancelled')
     else:
         value = message.text
-        msg = bot.send_message(chat_id, 'Please eneter a valid tome number, {value} is not a valid tome number')
+        msg = bot.send_message(chat_id, f'Please eneter a valid tome number, [{value}] is not a valid tome number')
         bot.register_next_step_handler(msg, whichTome)
     
 
