@@ -28,6 +28,10 @@ def whichTome(message):
     if int(message.text) in tomeRange:
         value = int(message.text)
         bot.send_message(chat_id, f'You have entered {value}')
+    else:
+        value = message.text
+        msg = bot.send_message(chat_id, 'Please eneter a valid tome number, {value} is not a valid tome number')
+        bot.register_next_step_handler(msg, whichTome)
     
 
 # Start the bot
