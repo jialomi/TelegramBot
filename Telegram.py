@@ -16,11 +16,14 @@ def start_message(msg):
 def help_message(msg):
     bot.send_message(chat_id, 'second test for raspberry pi hosted bot lel')
     
-@bot.message_handler(commands=['count'])
-def count_message(msg):
-    param = re.search(r'/count (\d+)', msg.txt)
-    if param:
-        value = param.group(1)
+@bot.message_handler(commands=['startTome'])
+def start_Tome(msg):
+    bot.send_message(chat_id, 'please enter a number after /startTome')
+    
+@bot.callback_query_handler(func = lambda call: True)
+def callback_query(call):
+    if call.data.startswith('/startTome_'):
+        value = call.data.split('_')[1]
         bot.send_message(chat_id, f'You have entered {value}')
 
 # Start the bot
