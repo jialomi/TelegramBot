@@ -34,6 +34,11 @@ def whichTome(message):
         value = message.text
         msg = bot.send_message(chat_id, f'Please eneter a valid tome number, [{value}] is not a valid tome number')
         bot.register_next_step_handler(msg, whichTome)
+        
+@bot.message_handler(content_types=['text'])
+def handle_message(message):
+    if message.text == 'hi':
+        bot.send_message(chat_id, 'Hello this is a test commit for replit')
     
 
 # Start the bot
