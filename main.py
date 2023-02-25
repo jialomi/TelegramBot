@@ -1,10 +1,11 @@
 import telebot
 from keep_alive import keep_alive
+import os
 
 tomeRange = ['1' , '2' , '3' , '4' , '5' , '6']
-
+apiKey = os.getenv("apiKey")
 # Replace with your own Telegram bot token
-bot = telebot.TeleBot("1793841737:AAFFzzD2LkBuW1kg0aNq7dKLYNHuAy1BHP4")
+bot = telebot.TeleBot(apiKey)
 
 # Replace with your own Telegram chat ID
 chat_id = "301795147"
