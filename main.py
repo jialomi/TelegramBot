@@ -40,6 +40,23 @@ def whichTome(message):
 def handle_message(message):
     if message.text == 'hi':
         bot.send_message(chat_id, 'Hello this is a test commit for replit')
+        
+@bot.message_handler(content_types=['text'])
+def handle_message(message):
+    msg = message.text.lower()
+    if msg == 'im hungry':
+        msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
+        bot.register_next_step_handler(msg1, suggestFood)
+        
+def suggestFood(message):
+    if message.text == 'continue':
+        bot.send_message(chat_id, 'You usually like to eat, aglio olio, ramen, fried rice, or thai food')
+    elif message.text == 'cancel':
+        bot.send_message(chat_id, 'alright then, I hope you find something to eat soon, please do not let yourself starve.')
+    else:
+        msg2 = bot.send_message(chat_id, 'Invalid response, please reply either continue, or cancel')
+        bot.register_next_step_handler(msg2, suggestFood)
+    
     
 
 # Start the bot
