@@ -24,6 +24,13 @@ def start_Tome(message):
     if message.text == '/startTome':
         msg = bot.send_message(chat_id, 'Please provide which tome to start with')
         bot.register_next_step_handler(msg, whichTome)
+
+    if message.text == 'hi':
+        bot.send_message(chat_id, 'Hello this is a test commit for replit')
+        
+    if message.text == 'im hungry':
+        msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
+        bot.register_next_step_handler(msg1, suggestFood)
         
 def whichTome(message):
     if message.text in tomeRange:
@@ -36,13 +43,6 @@ def whichTome(message):
         msg = bot.send_message(chat_id, f'Please eneter a valid tome number, [{value}] is not a valid tome number')
         bot.register_next_step_handler(msg, whichTome)
         
-@bot.message_handler(content_types=['text'])
-def handle_message(message):
-    if message.text == 'hi':
-        bot.send_message(chat_id, 'Hello this is a test commit for replit')
-        
-@bot.message_handler(content_types=['text'])
-def handle_message(message):
     msg = message.text.lower()
     if msg == 'im hungry':
         msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
