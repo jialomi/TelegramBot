@@ -19,14 +19,15 @@ def help_message(message):
     
 @bot.message_handler(content_types=['text'])
 def start_Tome(message):
+    messageValue = message.text.lower()
     if message.text == '/startTome':
         msg = bot.send_message(chat_id, 'Please provide which tome to start with')
         bot.register_next_step_handler(msg, whichTome)
 
-    if 'hello' in message.text or 'hi' in message.text:
+    if 'hello' in messageValue or 'hi' in messageValue:
         bot.send_message(chat_id, 'Hello this is a telegrambot made my @jialomi')
         
-    if 'hungry' in message.text:
+    if 'hungry' in messageValue:
         msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
         bot.register_next_step_handler(msg1, suggestFood)
         
