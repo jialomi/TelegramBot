@@ -1,9 +1,8 @@
 import telebot
 from keep_alive import keep_alive
-import os
 
 tomeRange = ['1' , '2' , '3' , '4' , '5' , '6']
-apiKey = os.getenv("apiKey")
+apiKey = '1793841737:AAFFzzD2LkBuW1kg0aNq7dKLYNHuAy1BHP4'
 # Replace with your own Telegram bot token
 bot = telebot.TeleBot(apiKey)
 
@@ -60,5 +59,4 @@ def suggestFood(message):
     
 
 # Start the bot
-keep_alive()
 bot.polling()
