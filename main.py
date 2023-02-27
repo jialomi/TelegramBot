@@ -41,8 +41,8 @@ def whichTome(message):
         msg = bot.send_message(chat_id, f'Please eneter a valid tome number, [{value}] is not a valid tome number')
         bot.register_next_step_handler(msg, whichTome)
         
-    msg = message.text.lower()
-    if 'hungry' in msg:
+    msG = message.text.lower()
+    if 'hungry' in msG:
         msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
         bot.register_next_step_handler(msg1, suggestFood)
         
