@@ -42,7 +42,7 @@ def whichTome(message):
         bot.register_next_step_handler(msg, whichTome)
         
     msg = message.text.lower()
-    if msg == 'im hungry':
+    if 'hungry' in msg:
         msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
         bot.register_next_step_handler(msg1, suggestFood)
         
