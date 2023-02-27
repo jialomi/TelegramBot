@@ -1,5 +1,4 @@
 import telebot
-from keep_alive import keep_alive
 
 tomeRange = ['1' , '2' , '3' , '4' , '5' , '6']
 apiKey = '1793841737:AAFFzzD2LkBuW1kg0aNq7dKLYNHuAy1BHP4'
