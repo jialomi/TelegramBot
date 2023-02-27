@@ -23,10 +23,10 @@ def start_Tome(message):
         msg = bot.send_message(chat_id, 'Please provide which tome to start with')
         bot.register_next_step_handler(msg, whichTome)
 
-    if message.text == 'hi':
-        bot.send_message(chat_id, 'Hello this is a test commit for replit')
+    if 'hello' in message.text or 'hi' in message.text:
+        bot.send_message(chat_id, 'Hello this is a telegrambot made my @jialomi')
         
-    if message.text == 'im hungry':
+    if 'hungry' in message.text:
         msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
         bot.register_next_step_handler(msg1, suggestFood)
         
@@ -41,10 +41,6 @@ def whichTome(message):
         msg = bot.send_message(chat_id, f'Please eneter a valid tome number, [{value}] is not a valid tome number')
         bot.register_next_step_handler(msg, whichTome)
         
-    msG = message.text.lower()
-    if 'hungry' in msG:
-        msg1 = bot.send_message(chat_id, 'Please go get something to eat, If you want me to recommend you something please type in continue, if not type cancel.')
-        bot.register_next_step_handler(msg1, suggestFood)
         
 def suggestFood(message):
     if 'continue' in message.text:
