@@ -47,9 +47,9 @@ def whichTome(message):
         bot.register_next_step_handler(msg1, suggestFood)
         
 def suggestFood(message):
-    if message.text == 'continue':
+    if 'continue' in message.text:
         bot.send_message(chat_id, 'You usually like to eat, aglio olio, ramen, fried rice, or thai food')
-    elif message.text == 'cancel':
+    elif 'cancel' in message.text:
         bot.send_message(chat_id, 'alright then, I hope you find something to eat soon, please do not let yourself starve.')
     else:
         msg2 = bot.send_message(chat_id, 'Invalid response, please reply either continue, or cancel')
